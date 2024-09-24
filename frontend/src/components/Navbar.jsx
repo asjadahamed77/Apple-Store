@@ -21,7 +21,7 @@ const Navbar = () => {
     };
     
   return (
-    <div className='flex justify-between px-2 fixed top-0 left-0 right-0 lg:justify-evenly md:px-4 items-center  shadow-sm'>
+    <div className='flex justify-between px-2 lg:justify-evenly md:px-4 items-center  shadow-sm bg-white z-5'>
         <img  onClick={handleToggleMenu}  className='w-8 lg:hidden cursor-pointer' src={toggle_menu_icon} alt="" />
       <div className='py-2'>
         <Link to={'/'}><h1 className="text-2xl font-bold">Ajji Store</h1></Link>
@@ -282,22 +282,24 @@ const Navbar = () => {
 
     {/* Navbar Links in Smaller Screen */}
     <ul 
-                className={`lg:hidden shadow-sm border  absolute top-12 left-0 bottom-0 bg-white overflow-hidden transition-all duration-500 ease-in-out ${
+                className={`lg:hidden shadow-sm border z-10 absolute top-12 left-0 bottom-0 bg-white overflow-hidden transition-all duration-500 ease-in-out ${
                     showMenuItems ? 'w-[250px]' : 'w-0'
                 }`}
             >
                 <hr />
-        <Link to={'/iphones'}><li className='p-3 text-[18px] font-semibold'>iPhones</li></Link>
+                <Link onClick={()=> setShowMenuItems(false)} to={'/'}><li className='p-3 text-[18px] font-semibold'>Home</li></Link>
+                <hr />
+        <Link onClick={()=> setShowMenuItems(false)} to={'/iphones'}><li className='p-3 text-[18px] font-semibold'>iPhones</li></Link>
         <hr />
-        <Link to={'/mac'}><li className='p-3 text-[18px] font-semibold'>Mac</li></Link>
+        <Link onClick={()=> setShowMenuItems(false)} to={'/mac'}><li className='p-3 text-[18px] font-semibold'>Mac</li></Link>
         <hr />
-        <Link to={'/ipad'}><li className='p-3 text-[18px] font-semibold'>iPad</li></Link>
+        <Link onClick={()=> setShowMenuItems(false)} to={'/ipad'}><li className='p-3 text-[18px] font-semibold'>iPad</li></Link>
         <hr />
-        <Link to={'/watch'}><li className='p-3 text-[18px] font-semibold'>Watch</li></Link>
+        <Link onClick={()=> setShowMenuItems(false)} to={'/watch'}><li className='p-3 text-[18px] font-semibold'>Watch</li></Link>
         <hr />
-        <Link to={'/airpods'}><li className='p-3 text-[18px] font-semibold'>AirPods</li></Link>
+        <Link onClick={()=> setShowMenuItems(false)} to={'/airpods'}><li className='p-3 text-[18px] font-semibold'>AirPods</li></Link>
         <hr />
-        <Link to={'/accessories'}><li className='p-3 text-[18px] font-semibold'>Accessories</li></Link>
+        <Link onClick={()=> setShowMenuItems(false)} to={'/accessories'}><li className='p-3 text-[18px] font-semibold'>Accessories</li></Link>
         <hr />
     </ul>
 
